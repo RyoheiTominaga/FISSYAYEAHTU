@@ -14,7 +14,8 @@ int main()
 	cin >> size;
 	array = new int[size];
 	//適当な数で初期化
-	for (int i = 0;i < size;++i) {
+	for (int i = 0;i < size;++i)
+	{
 		array[i] = rand() % 100;
 		cout << array[i] << ',';
 		cout << i << endl;
@@ -23,14 +24,15 @@ int main()
 	for (int i = 0;i < size;++i) {
 		
 		for (int j = 0;j < size + j;++j) {
-			randam = rand() % size-(j+1);
 			if (size - j > 1) {
-				array[size - j] = change;
-				array[randam] = array[size - j];
-				array[size - j] = change;
-				//cout << array[j];
+				randam = rand() % size - (j + 1);
+				change = array[size - (j+1)];
+				array[size - j] = array[randam];
+				array[randam] = change;
 			}
+			
 		}
+		cout << endl;
 	}
 }
 
